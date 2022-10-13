@@ -1,0 +1,20 @@
+﻿.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f2c983;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .container .box {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #f2e583;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-shadow: 1px 1px 1px grey;
+    }

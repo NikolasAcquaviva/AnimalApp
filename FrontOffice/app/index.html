@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<title> Front Office </title>
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #C20000;
+            color: #666;
+            font: 16px/28px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2 {
+            font-family: oswald;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        p {
+            font: 4px;
+            color: gray; 
+        }
+
+        #header {
+            width: 960px;
+            padding: 20px;
+            background: #C20000;
+        }
+
+        #container {
+            width: 960px;
+            margin: 0 auto;
+            background: #fff
+        }
+
+        #nav {
+            width: 960px;
+            background: #666;
+            color: #fff;
+            text-align: center;
+            font-family: Verdana, sans-serif;
+        }
+
+        #nav a {
+            color: #fff;
+            padding: 15px 20px;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: oswald;
+        }
+
+        #nav a:hover {
+            background: #333;
+        }
+
+        .slider-wrapper {
+            width: 100%;
+        }
+
+        .item-evi {
+            width: 320px;
+            padding: 20px;
+            float: left;
+            background: white;
+            font-size: 16px;
+        }
+
+
+
+        .button {
+            display: inline-block;
+            border-radius: 6px;
+            background-color: #E01F25;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            width: 270px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button a:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover {
+            padding-right: 25px;
+            opacity: 1;
+            right: 0;
+        }
+
+    </style>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/controllers/commerce.js"></script>
+    <script src="scripts/controllers/community.js"></script>
+    <script src="scripts/controllers/services.js"></script>
+</head>
+
+<body ng-app="frontOfficeApp" ng-controller="mainCtrl" ng-init="load()">
+    <div id="container">
+      <!-- Menu -->
+        <div id="nav">
+            <a href="/FrontOffice/#/community">COMMUNITY</a>
+            <a href="/FrontOffice/#/commerce">COMMERCE</a>
+            <a href="/FrontOffice/#/services">SERVICES</a>
+            <a href="/">ANIMAL GAME</a>
+            <a href="/BackOffice">BACKOFFICE</a>
+            <a ng-if="!logged" href="/BackOffice/#/users/login">LOGIN</a>
+            <span style="position: relative; left: 40px"><span ng-if="logged">Welcome {{ userLogged }} </span>
+            <a ng-click="logout()" ng-if="logged" href="/FrontOffice/" target="_blank">LOGOUT</a></span>
+        </div>
+        <div ng-view></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<title> Home </title>
+<head>
+    <meta charset="utf-8">
+    <!-- uso css per lo sfondo, per il menu e per l'audio -->
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #C20000;
+            color: #666;
+            font: 16px/28px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2 {
+            font-family: oswald;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        a {
+            color: #21aabd;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: #333;
+                text-decoration: underline;
+            }
+
+
+        #container {
+            width: 960px;
+            margin: 0 auto;
+            background: #fff
+        }
+
+        p {
+            font: 4px;
+            color: gray; 
+        }
+
+        #header {
+            width: 960px;
+            padding: 20px;
+            background: #C20000;
+        }
+
+        #container {
+            width: 960px;
+            margin: 0 auto;
+            background: #fff
+        }
+
+        #nav {
+            width: 960px;
+            background: #666;
+            color: #fff;
+            align: center;
+            font-family: Verdana, sans-serif;
+        }
+
+            #nav a {
+                color: #fff;
+                padding: 15px 20px;
+                display: inline-block;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: oswald;
+            }
+
+                #nav a:hover {
+                    background: #333;
+                }
+
+        .slider-wrapper {
+            width: 100%;
+        }
+
+        .item-evi {
+            width: 320px;
+            padding: 20px;
+            float: left;
+            background: white;
+            font-size: 16px;
+        }
+
+
+
+        .button {
+            display: inline-block;
+            border-radius: 6px;
+            background-color: #E01F25;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            width: 270px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+            .button a {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+                .button a:after {
+                    content: '\00bb';
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    right: -20px;
+                    transition: 0.5s;
+                }
+
+            .button:hover a {
+                padding-right: 25px;
+            }
+
+                .button:hover a:after {
+                    opacity: 1;
+                    right: 0;
+                }
+
+        hr {
+            color: #00f;
+            background: #00f;
+            border: 0;
+            height: 1px;
+        }
+
+        .Social {
+            background-color: black;
+            right: 500px;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/default.css" type="text/css" media="screen" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+
+</head>
+<link rel="stylesheet" href="slider.css">
+
+<body>
+
+    <div id="container">
+
+        <!-- Logo -->
+        <div id="header">
+            <center> <img src="" width="224" height="69" align="middle" alt="InserireLogo" title="Logo"></center>
+        </div>
+
+
+        <!-- Menu -->
+        <div id="nav" align="center">
+            <a>Home</a>
+            <a href=".html">INFORMAZIONI</a>
+            <a href=".html">GAME</a>
+            <a href=".html">BACK-OFFICE</a>
+            <a href=".html">FRONT-OFFICE</a>
+
+        </div>
+
+
+        <br>
+
+        <!-- Articoli -->
+        <h3 align="center"> ACQUISTA GLI ARTICOLI</h3>
+        <div class="item-evi" style="text-align:center">
+            <img align="middle" src="im1.png" width="280" height="250" alt="PUPPY XS/S" title="PUPPY XS/S">
+            <p align="center">PUPPY XS/S</p>
+            <button align="center" class="button" style="vertical-align:middle"><a href="" target="_blank">Buy</a></button>
+        </div>
+
+        <div class="item-evi">
+            <h3 align="center"></h3>
+            <img align="center" src="" width="280" height="250" alt="" title="">
+            <button class="button" align="center"><a href="" target="_blank">Buy</a></button>
+        </div>
+
+
+
+
+        <hr align="left" size="3 width=" 300? color="gray" noshade>
+
+</body>
+
+</html>

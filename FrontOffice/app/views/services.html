@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<title> Front Office </title>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #718093;
+            color: #666;
+            font: 16px/28px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2 {
+            font-family: oswald;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        a {
+            color: #21aabd;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: #333;
+                text-decoration: underline;
+            }
+
+
+        #container {
+            width: 960px;
+            margin: 0 auto;
+            background: #dcdde1
+            box-shadow: 0 30px 40px rgba(0,0,0,.1);
+        }
+
+        p {
+            font: 4px;
+            color: gray; 
+        }
+
+        #header {
+            width: 960px;
+            padding: 20px;
+            background: #C20000;
+        }
+
+        #nav {
+            width: 960px;
+            background: #666;
+            color: #fff;
+            font-family: Verdana, sans-serif;
+        }
+
+
+        .slider-wrapper {
+            width: 100%;
+        }
+
+	.item-evi {
+      width: 920px;
+      padding: 20px;
+      background: #f5f6fa;
+      font-size: 16px;
+      box-shadow: 0 30px 40px rgba(0,0,0,.1);
+      top: 50%;
+      left: 50%;      
+    }
+
+        .button {
+            display: inline-block;
+            border-radius: 6px;
+            background-color: #E01F25;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            width: 270px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+            .button a {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+                .button a:after {
+                    content: '\00bb';
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    right: -20px;
+                    transition: 0.5s;
+                }
+
+            .button:hover a {
+                padding-right: 25px;
+            }
+
+                .button:hover a:after {
+                    opacity: 1;
+                    right: 0;
+                }
+
+        hr {
+            color: #00f;
+            background: #00f;
+            border: 0;
+            height: 1px;
+        }
+
+        .Social {
+            background-color: black;
+            right: 500px;
+        }
+    </style>
+
+</head>
+<body ng-controller="ServicesCtrl">
+    <div class="item-evi" style="text-align: center">
+    <h1>Welcome to Services. Select a service to know more about the service itself, and in which headquarters it is provided!</h1>
+    <div ng-if="mainView">
+        <button class="button" type="button" ng-click="veterinarian()">Veterinarian</button>
+        <button class="button" type="button" ng-click="dogsitter()">Dog Sitter</button>
+        <button class="button" type="button" ng-click="psychologist()">Pet Psychologist</button>
+    </div>
+    <div ng-if="vetDescr">
+        <h2>Our veterinarians are among the best prepared pet medics in the country. They can treat dogs and cats the most, but are able to treat any other animal as well!</h2> 
+        <!--Insert an image here-->
+        <p>The headquarter addresses offering this service: </p><br>
+        <hr>
+        <div ng-repeat="el in vetQuarters">
+            <p>City: {{ el.city }} <br><br>
+            Address: {{ el.address }}</p><hr>
+        </div>
+        <p>If you want to reserve an appointment and find more information about the timetables, reach us in the Back Office please... </p>
+        <button class="button" ng-click="backServices()">Find Out More</button>
+    </div>
+    <div ng-if="dogSitDescr">
+        <h2>We have a lot of well-minded Dog Sitters who are able to grow fond of any kind of dog!</h2>
+        <!--Insert an image here-->        
+        <p>The headquarter addresses offering this service: </p>
+        <hr>
+        <div ng-repeat="el in dogQuarters">
+            <p>City: {{ el.city }} <br><br>
+            Address: {{ el.address }}</p><hr>
+        </div>
+        <p>If you want to reserve an appointment and find more information about the timetables, reach us in the Back Office please... </p>
+        <button class="button" ng-click="backServices()">Find Out More</button>
+    </div>
+    <div ng-if="psychoDescr">
+        <h2>Someone once said: "Your psychogologists have 99% of probability to heal your pet" ;)</h2>
+        <!--Insert an image here-->
+        <p>The headquarter addresses offering this service: </p>
+        <hr>
+        <div ng-repeat="el in psyQuarters">
+            <p>City: {{ el.city }} <br><br>
+            Address: {{ el.address }}</p><hr>
+        </div>
+        <p>If you want to reserve an appointment and find more information about the timetables, reach us in the Back Office please... </p>
+        <button class="button" ng-click="backServices()">Find Out More</button>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<title> Front Office </title>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <style>
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #718093;
+      color: #666;
+      font: 16px/28px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    h1, h2 {
+      font-family: oswald;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    a {
+      color: #21aabd;
+      text-decoration: none;
+    }
+
+      a:hover {
+        color: #333;
+        text-decoration: underline;
+      }
+
+
+    p {
+      font: 4px;
+      color: gray;
+    }
+
+    #header {
+      width: 960px;
+      padding: 20px;
+      background: #C20000;
+    }
+
+    #container {
+      width: 960px;
+      margin: 0 auto;
+      background: #dcdde1;
+      box-shadow: 0 30px 40px rgba(0,0,0,.1);
+    }
+
+    #nav {
+      width: 960px;
+      background: #666;
+      color: #fff;
+      font-family: Verdana, sans-serif;
+    }
+
+      #nav a {
+        color: #fff;
+        padding: 15px 20px;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: oswald;
+      }
+
+        #nav a:hover {
+          background: #333;
+        }
+
+    .slider-wrapper {
+      width: 100%;
+    }
+
+    .item-evi {
+      //width: 265px;
+      width: 920px;
+      padding: 20px;
+      //float: left;
+      background: #f5f6fa;
+      font-size: 16px;
+      box-shadow: 0 30px 40px rgba(0,0,0,.1);
+	//sotto nuovo
+      top: 50%;
+      left: 50%;
+    }
+
+//nuovo
+    .product {
+      width: 920px;
+      padding: 20px;
+      background: #f5f6fa;
+      font-size: 16px;
+      box-shadow: 0 30px 40px rgba(0,0,0,.1);
+      top: 50%;
+      left: 50%;
+      margin-left: -20px;
+    }
+
+    .button {
+      display: inline-block;
+      border-radius: 6px;
+      background-color: #E01F25;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 18px;
+      padding: 20px;
+      width: 270px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+      .button a {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+        .button a:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+      .button:hover a {
+        padding-right: 25px;
+      }
+
+        .button:hover a:after {
+          opacity: 1;
+          right: 0;
+        }
+
+    hr {
+      color: #00f;
+      background: #00f;
+      border: 0;
+      height: 1px;
+    }
+
+    .Social {
+      background-color: black;
+      right: 500px;
+    }
+  </style>
+
+</head>
+<!--<link rel="stylesheet" href="slider.css">-->
+<body ng-controller="CommerceCtrl">
+  <div class="item-evi" style="text-align: center"><!--nuovo-->
+  <div ng-if="buy" class="container">
+    <!-- Articoli -->
+    <button ng-if="logged" ng-click="showBought()" class="button"><a href="" target="_blank">My Products</a></button>
+
+    <br />
+    <h1 style="text-align: center"> BUY ITEMS </h1>
+    <hr size="30" width="90%" color="red">
+    <h3> FOOD </h3>
+    <div ng-repeat="el in foodProducts">
+        <div class="product" style="text-align:center">
+          <img src="data:image/png;base64,{{ el.image }}" width="130" height="100" alt="a product">
+          <p>{{ el.name }}</p>
+          <p>Price: {{ el.price }}</p>
+          <p>Available: {{ el.availability }}</p>
+          <p>
+            <label for="quantity1-{{$index}}">Select quantity:</label>
+            <input type="number" name="quantity1-{{$index}}" id="quantity1-{{$index}}" min="1" ng-model="food_data.qty[$index]">
+          </p>
+          <button ng-click="buyProduct(el,$index)" class="button" style="vertical-align:middle"><a href="" target="_blank">Buy</a></button>
+          <hr size="30" width="90%" color="red">
+        </div>
+    </div>
+
+    <h3> TOYS  </h3>
+    <div ng-repeat="el in gameProducts">
+        <div class="product" style="text-align:center">
+          <img src="data:image/png;base64,{{ el.image }}" width="130" height="100" alt="a product">
+          <p>{{ el.name }}</p>
+          <p>Price: {{ el.price }}</p>
+          <p>Available: {{ el.availability }}</p>
+          <p>
+            <label for="quantity2-{{$index}}">Select quantity:</label>
+            <input type="number" name="quantity2-{{$index}}" id="quantity2-{{$index}}" min="1" ng-model="toy_data.qty[$index]">
+          </p>
+          <button ng-click="buyProduct(el,$index)" class="button" style="vertical-align:middle"><a href="" target="_blank">Buy</a></button>
+          <hr size="30" width="90%" color="red">
+        </div>
+    </div>
+  </div>
+
+  <div ng-if="bought">
+    <div ng-repeat="el in boughtProducts">
+      <h1 ng-if="$first">These are the products you bought</h1>
+      <img src="data:image/png;base64,{{ el.image }}" width="130" height="100" alt="a product">
+      <p>{{ el.name }}</p>
+      <p>Price: {{ el.price }}</p>
+      <p>Quantity Bought: {{ el.quantity }}</p>
+    </div>
+    <p>You have spent {{ prodTotal }}$ purchasing products so far!</p>
+  </div>
+  </div>
+</body>
+</html>

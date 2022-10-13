@@ -1,0 +1,142 @@
+<body>
+    <div style="margin-top: 3%" class="logform">
+        <form id="login">
+            <p>Here you can <b>Sign In</b> if you've got credentials</p><br>
+            <label for="usernameIn">Username</label>
+            <input type="text" id="usernameIn" placeholder="username"><br>
+            <label for="passwordIn">Password</label>
+            <input type="password" id="passwordIn" placeholder="password">
+            <div class="buttons">
+                <button style="background-color: #35D429" id="logbtn" class="button small medium-only-expanded" type="button">Login</button>
+            </div>
+            <br><p><a id="switchUp" href="#/users/login" style="color:darkcyan">Still haven't got an account? Click here to Sign Up</a></p>
+
+        </form>
+    </div>
+
+    <div class="logform">
+        <form id="registration">
+            <p>Here you can <b>Sign Up</b> if you want to join us</p><br>
+            <label for="name">Insert your Name:</label>
+            <input type="text" id="name" placeholder="name"><br>
+            <label for="surname">Insert your Surname:</label>
+            <input type="text" id="surname" placeholder="surname"><br><br>
+            <label for="favPets"><p><b>Insert your favourites Pets:</b></p></label>
+            <div id="favPets"> 
+                <label for="dog">
+                    Dogs <input style="
+                                    position: relative;
+                                    left: 8px;" 
+                                    id="dog" value="dog" type="checkbox">
+                </label>    
+            
+                <label for="cat">
+                    Cats <input style="
+                                    position: relative;
+                                    left: 10px;" 
+                                    id="cat" value="cat" type="checkbox">
+                </label>    
+            
+                <label for="fish">
+                    Fish <input style="
+                                    position: relative;
+                                    left: 11px;"
+                                    id="fish" value="fish" type="checkbox">
+                </label>
+            
+                <label for="bear">
+                    Bears <input style="
+                                    position: relative;
+                                    left: 6px;"
+                                    id="bear" value="bear" type="checkbox">
+                </label>
+            
+                <label for="duck">
+                    Ducks <input id="duck" value="duck" type="checkbox">
+                </label>
+            </div>
+            <hr><p>Here you may want to insert some information about the pet you're owning:</p>
+            <div id="owningPet">
+                <label for="animal">Select the animal</label>
+                <select id="animal">
+                    <option value="dog" selected>Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="fish">Fish</option>
+                    <option value="bear">Bear</option>
+                    <option value="duck">Duck</option>
+                </select><br><br>
+                <label for="animalName">Insert your animal's name</label>
+                <input type="text" id="animalName"><br><br>
+                <b>Insert the sex</b><br><br>
+                <div id="sex">
+                    <label for="maleSex">
+                        Male <input type="radio" id="maleSex" name="ok" value="false" /><br><br>
+                    </label>
+                    <label for="femaleSex">
+                        Female <input type="radio" id="femaleSex" name="ok" value="true" /><br><br>
+                    </label>
+                </div>
+                <label for="age">Insert the age</label>
+                <input type="number" id="age" min="0" max="25"><br><br>
+                <label for="animalDescription">Insert a brief description about your pet</label>
+                <textarea rows="6" cols="8" id="animalDescription"></textarea><br>
+            </div><hr>
+            <div id="preferences">
+                <p>You may be feel like inserting some preferences</p><br>
+                <label for="pref1">
+                    Funny Stuff <input style="
+                                            position: relative;
+                                            left: 26px;"  
+                                            type="checkbox" value="funny stuff" id="pref1">
+                </label>
+                <label for="pref2">
+                    Informative Stuff <input style="
+                                                position: relative;
+                                                left: 11px;" 
+                                                type="checkbox" value="informative stuff" id="pref2">
+                </label>
+                <label for="pref3">
+                    Psychologic Help <input style="
+                                                position: relative;
+                                                left: 8px;"
+                                                type="checkbox" value="psychologic help" id="pref3">
+                </label>
+                <label for="pref4">
+                    Wedding Planning <input type="checkbox" value="wedding planning" id="pref4">
+                </label>
+            </div><hr>
+            <p style="margin-bottom: 5%;"><b>Last needings</b></p>
+            <label for="username">Insert the Username</label>
+            <input type="text" id="username" placeholder="username"><br>
+            <label for="password">Insert the Password</label>
+            <input type="password" id="password" placeholder="password"><br>
+            <label for="repassword">Type the Password again</label>
+            <input type="password" id="repassword" placeholder="retype password"><br>
+            <label id="ad" for="admin">
+                I want to apply for administration <input value="true" type="checkbox" id="admin">
+            </label>
+            <div style="margin-top: 3%;" class="buttons">
+                <button style="background-color: #3333FF" class="button small medium-only-expanded" id="signUp" type="button">Register Account</button>
+            </div>    
+        </form>
+    </div>
+</body>
+<script src="../scripts/login.js"></script>
+<link href="../scripts/users.css" rel="stylesheet">
+<style scoped>
+    #favPets label input, #preferences label input, input#admin{
+        position: relative;
+        top: 1px;
+        left: 5px;
+    }
+
+    #favPets label, #preferences label{ 
+        text-align: center;
+        margin-right: 35%;
+        margin-left: 35%;
+    }
+
+    label#ad{
+        margin-right: 50%;
+    }
+</style>

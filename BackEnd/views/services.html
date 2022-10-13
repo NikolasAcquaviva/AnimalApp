@@ -1,0 +1,42 @@
+<body>
+    <h1>Welcome in the services section!</h1><br>
+    
+    <div id="main">
+        <div id="myservices">
+            <button type="button" style="background-color: #727BCA;" class="button medium-only-expanded" id="showmy">Show My Reserved Services</button>
+        </div>
+        <h2 style="margin-top: 3%;">Select a service to see which headquarters offer it and to make an appointment!</h2>
+        <div class="buttons">
+            <button style="background-color: #6ED0DF; color: black" class="button medium-only-expanded" type="button" id="veterinarian">Veterinarian</button>
+            <button style="background-color: #53e494; color: black" class="button medium-only-expanded" type="button" id="dogsitter">Dog Sitter</button>
+            <button style="background-color: #6ED0DF; color: black" class="button medium-only-expanded" type="button" id="psychologist">Pet Psychologist</button>
+        </div>
+    </div>
+    
+    <div id="vet"></div>
+    <div id="dogsit"></div>
+    <div id="psy"></div>
+    <div id="reservation"></div>
+</body>
+<script src="../scripts/services.js"></script>
+<link rel="stylesheet" href="../scripts/users.css">
+<style scoped>
+    .buttons, #myservices{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #veterinarian{
+        position: relative;
+        right: 3%;
+    }
+
+    #psychologist{
+        position: relative;
+        left: 3%;
+    }
+
+    #vet button, #dogsit button, #psy button, #reservation button{
+        position: relative;
+    }
+</style>    

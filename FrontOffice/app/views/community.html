@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<title> Front Office </title>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #718093;
+            color: #666;
+            font: 16px/28px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2 {
+            font-family: oswald;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        a {
+            color: #21aabd;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: #333;
+                text-decoration: underline;
+            }
+
+
+        #container {
+            width: 960px;
+            margin: 0 auto;
+            background: #dcdde1;
+            box-shadow: 0 30px 40px rgba(0,0,0,.1)
+        }
+
+        p {
+            font: 4px;
+            color: gray; 
+        }
+
+        #header {
+            width: 960px;
+            padding: 20px;
+            background: #C20000;
+        }
+
+        #container {
+            width: 960px;
+            margin: 0 auto;
+            background: #fff
+        }
+
+        #nav {
+            width: 960px;
+            background: #666;
+            color: #fff;
+            text-align: center;
+            font-family: Verdana, sans-serif;
+        }
+
+            #nav a {
+                color: #fff;
+                padding: 15px 20px;
+                display: inline-block;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: oswald;
+            }
+
+                #nav a:hover {
+                    background: #333;
+                }
+
+        .slider-wrapper {
+            width: 100%;
+        }
+
+        .item-evi {
+            width: 920px;
+            padding: 20px;
+            box-shadow: 0 30px 40px rgba(0,0,0,.1);
+            top: 50%;
+            left: 50%;
+            background: #f5f6fa;
+            font-size: 16px;
+        }
+
+
+
+        .button {
+            display: inline-block;
+            border-radius: 6px;
+            background-color: #E01F25;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            width: 270px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+            .button a {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+                .button a:after {
+                    content: '\00bb';
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    right: -20px;
+                    transition: 0.5s;
+                }
+
+            .button:hover a {
+                padding-right: 25px;
+            }
+
+                .button:hover a:after {
+                    opacity: 1;
+                    right: 0;
+                }
+
+        hr {
+            color: #00f;
+            background: #00f;
+            border: 0;
+            height: 1px;
+        }
+
+        .Social {
+            background-color: black;
+            right: 500px;
+        }
+
+        .product {
+      width: 920px;
+      padding: 20px;
+      background: #f5f6fa;
+      font-size: 16px;
+      box-shadow: 0 30px 40px rgba(0,0,0,.1);
+      top: 50%;
+      left: 50%;
+      margin-left: -20px;
+    }
+
+    ul{
+	display: inline-block;
+    }
+    </style>
+
+    <script src="../scripts/global.js"></script>
+</head>
+
+<body ng-controller="CommunityCtrl">
+    <div class="item-evi" style="text-align: center">
+    <h1>Welcome to the community, you may read some posts or write your own!</h1>
+    <h2 ng-if="logged">Since your preferences are:</h2> <ul><li ng-repeat="pref in preferences">{{ pref }}</li></ul>
+        <h2>It will be shown before the posts you are more interested in!
+    </h2>
+    <div ng-if="showPosts">
+        <h3 style="text-align: center">Posts: </h3><br>
+        <div ng-repeat="post in posts">
+            <p>User {{ post.user }} in {{ post.date }} wrote: </p>
+            {{ post.post }} 
+            <p>In category: {{ post.category }}</p>
+            <hr>
+        </div>
+        <button class="button" ng-click="showPostForm()">Write a Post</button>
+    </div>
+    <div ng-if="showForm">
+        <p>Write something about the experience between you and your pets: </p>
+        <div><label for="category">Choose the category of the post:</label>
+        <select id="category" ng-options="option.name for option in data.availableOptions track by option.id" ng-model="data.selectedOption">
+        </select></p></div>
+        <textarea cols="60" rows="10" ng-model="postContent"></textarea>
+        <div><button class="button" ng-click="writePost(postContent)">Upload Post</button></div>
+    </div>
+    </div>
+</body>
+</html>

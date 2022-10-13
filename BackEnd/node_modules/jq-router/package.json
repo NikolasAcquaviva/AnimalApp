@@ -1,0 +1,65 @@
+{
+  "name": "jq-router",
+  "version": "4.6.1",
+  "description": "A tiny jQuery plugin for building single page application (SPA) with the possibility of nested views",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha \"test/**/*.test.js\"",
+    "nyc": "nyc --reporter=html --reporter=text  npm run test"
+  },
+  "nyc": {
+    "exclude": [
+      "**/test/**/*.test.js",
+      "test"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muzammilkm/jq-router.git"
+  },
+  "keywords": [
+    "jQuery",
+    "plugin",
+    "jquery-plugin",
+    "single",
+    "plage",
+    "application",
+    "spa",
+    "jq-router",
+    "router",
+    "ui-router",
+    "routes",
+    "controller",
+    "model",
+    "view",
+    "rendering",
+    "view rendering",
+    "nested route",
+    "abstract route"
+  ],
+  "author": "Muzammil Khaja Mohmmaed <muzammilkm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muzammilkm/jq-router/issues"
+  },
+  "homepage": "https://muzammilkm.github.io/jq-router",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "flush-cache": "^1.0.1",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.0",
+    "jquery": "^3.2.1",
+    "jsdom": "^13.2.0",
+    "jsdom-global": "^3.0.2",
+    "jshint": "^2.9.6",
+    "mocha": "^4.0.1",
+    "nyc": "^13.1.0",
+    "sinon": "^7.1.1"
+  }
+}

@@ -1,0 +1,69 @@
+table, tr, td, th{
+    border: 0.1rem solid black;
+    border-collapse: collapse;
+}
+
+.center{
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+p, h5, h2, h1{
+    text-align: center;
+    position: relative;
+    top: 0.5rem;
+}
+
+.buttons{
+    display: flex;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons #changepwd{
+    position: relative;
+    right: 1%;
+}
+
+.buttons #rmuser{
+    position: relative;
+    left: 1%;
+}
+
+.logform{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.card-section{
+    background: #d18b;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+div.card{
+    border-radius: 10px;
+    background-color: #d18b;
+    border-color: #d18b;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    position: relative;
+    bottom: 5px;
+}
+
+tbody tr:nth-child(odd) td{
+    background-color: #efa2ef;
+}
+tbody tr:nth-child(even) td{
+    background-color: #ef70ff;
+}
+
+.content td{
+    padding: 5px 0;
+}
